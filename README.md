@@ -26,10 +26,6 @@ Installation can be done through pip. You must have python version >= 3.6.
 
 The statement to import the package:
 
-	from shuffle_graph_package import shuffle_graph
-
-or
-
 	from shuffle_graph_package import *
 	
 Example:

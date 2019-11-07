@@ -26,10 +26,19 @@ __all__: list = ['version', 'calculate_number_of_shuffles_required_under_default
 version = '0.9.9'
 
 def calculate_number_of_shuffles_required_under_default_random_function(node_number):
+    '''
+        Python's random number function USES the Mersenne Twister algorithm, which has a period of 2**19937-1.If the total permutation of graph nodes is larger than the random function period, the card cannot be shuffled only once.
+        The total permutation of a graph node is "factorial of the number of nodes".The number of binary digits of the total number of permutations can be calculated by Stirling's formula.
+
+        >>> calculate_number_of_shuffles_required_under_default_random_function(1000)
+        1
+        >>> calculate_number_of_shuffles_required_under_default_random_function(10000)
+        6
+    '''
     import math
     if node_number > 0:
-        bit_length_of_permutation_number = math.ceil(math.log2(2*math.pi*node_number)/2 + math.log2(node_number/math.e)*node_number)  #图节点的全排列量是“节点数的阶乘”。而全排列量的二进制位数可用Stirling公式算出
-        shuffle_number = math.ceil(bit_length_of_permutation_number/19937)  #Python的随机数函数使用Mersenne Twister算法，它周期为2**19937-1。图节点全排列量大于随即发生函数周期的话就不能只洗牌一遍
+        bit_length_of_permutation_number = math.ceil(math.log2(2*math.pi*node_number)/2 + math.log2(node_number/math.e)*node_number)
+        shuffle_number = math.ceil(bit_length_of_permutation_number/19937)
     else:
         shuffle_number = 0
     return shuffle_number

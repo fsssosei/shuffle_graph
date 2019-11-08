@@ -23,7 +23,7 @@ with open("README.md", encoding='utf-8') as fh:
 
 setup(
     name='shuffle_graph',
-    version='0.9.9',
+    version='1.0.0',
     description='Adaptive overlapping community discovery algorithm package in python.',
     long_description=long_description,
     long_description_content_type='text/markdown',

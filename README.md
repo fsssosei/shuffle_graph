@@ -12,7 +12,7 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/shuffle_graph)
 ![PyPI - License](https://img.shields.io/pypi/l/shuffle_graph)
 
-*Adaptive overlapping community discovery algorithm package in python.*
+*Graph shuffling package in python.*
 
 *Welcome to complete the documentation.*
 

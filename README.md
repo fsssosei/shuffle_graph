@@ -10,7 +10,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/fsssosei/shuffle_graph/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/fsssosei/shuffle_graph/?branch=master)
 ![PyPI - Downloads](https://img.shields.io/pypi/dw/shuffle_graph?label=PyPI%20-%20Downloads)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/shuffle_graph)
-https://img.shields.io/pypi/l/shuffle_graph
+![PyPI - License](https://img.shields.io/pypi/l/shuffle_graph)
 
 *Adaptive overlapping community discovery algorithm package in python.*
 

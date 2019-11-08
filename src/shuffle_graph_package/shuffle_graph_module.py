@@ -25,7 +25,7 @@ __all__: list = ['version', 'calculate_number_of_shuffles_required_under_default
 
 version = '0.9.9'
 
-def calculate_number_of_shuffles_required_under_default_random_function(node_number):
+def calculate_number_of_shuffles_required_under_default_random_function(node_number: int) -> int:
     '''
         Python's random number function USES the Mersenne Twister algorithm, which has a period of 2**19937-1.If the total permutation of graph nodes is larger than the random function period, the card cannot be shuffled only once.
         The total permutation of a graph node is "factorial of the number of nodes".The number of binary digits of the total number of permutations can be calculated by Stirling's formula.
@@ -43,7 +43,7 @@ def calculate_number_of_shuffles_required_under_default_random_function(node_num
         shuffle_number = 0
     return shuffle_number
 
-def shuffle_graph(data_graph, shuffle_number, seed = None):
+def shuffle_graph(data_graph: graph, shuffle_number: int, seed: int = None) -> graph:
     '''
         >>> G = Graph({0: {1: {}}, 1: {0: {}, 2: {}}, 2: {1: {}, 3: {}}, 3: {2: {}, 4: {}}, 4: {3: {}}})
         >>> shuffle_graph(G, 1, 65535).adj  #Set seed to make the results repeatable.

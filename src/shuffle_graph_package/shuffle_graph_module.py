@@ -43,7 +43,7 @@ def calculate_number_of_shuffles_required_under_default_random_function(node_num
         shuffle_number = 0
     return shuffle_number
 
-def shuffle_graph(data_graph: graph, shuffle_number: int, seed: int = None) -> graph:
+def shuffle_graph(data_graph: 'graph', shuffle_number: int, seed: int = None) -> 'graph':
     '''
         >>> G = Graph({0: {1: {}}, 1: {0: {}, 2: {}}, 2: {1: {}, 3: {}}, 3: {2: {}, 4: {}}, 4: {3: {}}})
         >>> shuffle_graph(G, 1, 65535).adj  #Set seed to make the results repeatable.

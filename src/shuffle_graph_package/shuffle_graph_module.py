@@ -23,7 +23,7 @@ from networkx.classes.multidigraph import MultiDiGraph
 
 __all__: list = ['version', 'calculate_number_of_shuffles_required_under_default_random_function', 'shuffle_graph']
 
-version = '0.9.9'
+version = '1.0.0'
 
 def calculate_number_of_shuffles_required_under_default_random_function(node_number: int) -> int:
     '''

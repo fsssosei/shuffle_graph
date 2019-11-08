@@ -21,9 +21,7 @@ from networkx.classes.digraph import DiGraph
 from networkx.classes.multigraph import MultiGraph
 from networkx.classes.multidigraph import MultiDiGraph
 
-__all__: list = ['version', 'calculate_number_of_shuffles_required_under_default_random_function', 'shuffle_graph']
-
-version = '1.0.1'
+__all__: list = ['calculate_number_of_shuffles_required_under_default_random_function', 'shuffle_graph']
 
 def calculate_number_of_shuffles_required_under_default_random_function(node_number: int) -> int:
     '''

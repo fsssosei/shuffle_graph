@@ -23,11 +23,11 @@ with open("README.md", encoding='utf-8') as fh:
 
 setup(
     name='shuffle_graph',
-    version='1.0.4',
+    version='1.0.5',
     description='Graph shuffling package in python.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/fsssosei/count_dict',
+    url='https://github.com/fsssosei/shuffle_graph',
     license='GNU Affero General Public License v3',
     author='sosei',
     author_email='fss.sosei@gmail.com',

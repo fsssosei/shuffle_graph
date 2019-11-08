@@ -17,3 +17,5 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 '''
 
 from shuffle_graph_package.shuffle_graph_module import *
+
+version = '1.0.2'

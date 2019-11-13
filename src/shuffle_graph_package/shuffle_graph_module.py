@@ -16,23 +16,19 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 '''
 
-from networkx.classes.graph import Graph
-from networkx.classes.digraph import DiGraph
-from networkx.classes.multigraph import MultiGraph
-from networkx.classes.multidigraph import MultiDiGraph
-
 __all__: list = ['calculate_number_of_shuffles_required_under_default_random_function', 'shuffle_graph']
 
 def calculate_number_of_shuffles_required_under_default_random_function(node_number: int) -> int:
     '''
         Python's random number function USES the Mersenne Twister algorithm, which has a period of 2**19937-1.If the total permutation of graph nodes is larger than the random function period, the card cannot be shuffled only once.
         The total permutation of a graph node is "factorial of the number of nodes".The number of binary digits of the total number of permutations can be calculated by Stirling's formula.
-
+        
         >>> calculate_number_of_shuffles_required_under_default_random_function(1000)
         1
         >>> calculate_number_of_shuffles_required_under_default_random_function(10000)
         6
     '''
+    
     import math
     if node_number > 0:
         bit_length_of_permutation_number = math.ceil(math.log2(2*math.pi*node_number)/2 + math.log2(node_number/math.e)*node_number)
@@ -41,13 +37,38 @@ def calculate_number_of_shuffles_required_under_default_random_function(node_num
         shuffle_number = 0
     return shuffle_number
 
-def shuffle_graph(data_graph: 'graph', shuffle_number: int, seed: int = None) -> 'graph':
+def shuffle_graph(data_graph: 'NetworkXGraphObject', shuffle_number: int, seed: int = None) -> 'NetworkXGraphObject':
     '''
+        Returns a new graph, shuffling the order of the nodes in the input data_graph, but the relationship between the nodes remains the same. The data_graph doesn't change.
+        
+        Parameters
+        ----------
+        data_graph : NetworkXGraphObject
+            A NetworkX graph object.
+        
+        shuffle_number : integer
+            Set the number of shuffles.
+        
+        seed : integer, random_state, or None (default)
+            Indicator of random number generation state.
+        
+        Returns
+        -------
+        new_order_data_graph : NetworkXGraphObject
+            Returns a new graph that shuffles the order of nodes but keeps the relationships between them the same.
+        
+        Examples
+        --------
         >>> G = Graph({0: {1: {}}, 1: {0: {}, 2: {}}, 2: {1: {}, 3: {}}, 3: {2: {}, 4: {}}, 4: {3: {}}})
         >>> shuffle_graph(G, 1, 65535).adj  #Set seed to make the results repeatable.
         AdjacencyView({3: {2: {}, 4: {}}, 4: {3: {}}, 1: {0: {}, 2: {}}, 2: {3: {}, 1: {}}, 0: {1: {}}})
     '''
+    
     import random
+    from networkx.classes.graph import Graph
+    from networkx.classes.digraph import DiGraph
+    from networkx.classes.multigraph import MultiGraph
+    from networkx.classes.multidigraph import MultiDiGraph
     from networkx.convert import from_dict_of_dicts
     
     random.seed(seed)

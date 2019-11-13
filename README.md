@@ -14,8 +14,6 @@
 
 *Graph shuffling package in python.*
 
-*Welcome to complete the documentation.*
-
 ## Installation
 
 Installation can be done through pip. You must have python version >= 3.6.

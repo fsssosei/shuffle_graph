@@ -23,7 +23,7 @@ with open("README.md", encoding='utf-8') as fh:
 
 setup(
     name='shuffle_graph',
-    version='1.1.0',
+    version='1.1.1',
     description='Graph shuffling package in python.',
     long_description=long_description,
     long_description_content_type='text/markdown',

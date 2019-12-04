@@ -16,7 +16,7 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 '''
 
-__all__: list = ['calculate_number_of_shuffles_required_under_default_random_function', 'shuffle_graph']
+__all__ = ['calculate_number_of_shuffles_required_under_default_random_function', 'shuffle_graph']
 
 def calculate_number_of_shuffles_required_under_default_random_function(node_number: int) -> int:
     '''

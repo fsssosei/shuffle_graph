@@ -1,6 +1,6 @@
 '''
 shuffle_graph - This is a graph shuffling package.
-Copyright (C) 2019  sosei
+Copyright (C) 2020  sosei
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published
@@ -23,7 +23,7 @@ with open("README.md", encoding='utf-8') as fh:
 
 setup(
     name='shuffle_graph',
-    version='1.1.2',
+    version='2.0.0',
     description='Graph shuffling package in python.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -32,14 +32,14 @@ setup(
     author='sosei',
     author_email='fss.sosei@gmail.com',
     keywords=['Graph', 'Shuffle'],
-    python_requires='>=3.7',
+    python_requires='>=3.8',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: GNU Affero General Public License v3',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
     ],
     package_dir={'': 'src'},
     packages=find_packages('src'),
     include_package_data=True,
-    install_requires=['networkx>=2.4']
+    install_requires=['networkx>=2.5', 'completely_shuffle>=0.9.2']
 )

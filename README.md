@@ -16,7 +16,7 @@
 
 ## Installation
 
-Installation can be done through pip. You must have python version >= 3.7
+Installation can be done through pip. You must have python version >= 3.8
 
 	pip install shuffle-graph
 
@@ -28,10 +28,8 @@ The statement to import the package:
 	
 Example:
 
-	>>> calculate_number_of_shuffles_required_under_default_random_function(10000)
-	6
-
 	>>> from networkx.classes.graph import Graph
 	>>> G = Graph({0: {1: {}}, 1: {0: {}, 2: {}}, 2: {1: {}, 3: {}}, 3: {2: {}, 4: {}}, 4: {3: {}}})
-	>>> shuffle_graph(G, 1, 65535).adj  #Set seed to make the results repeatable.
-	AdjacencyView({3: {2: {}, 4: {}}, 4: {3: {}}, 1: {0: {}, 2: {}}, 2: {3: {}, 1: {}}, 0: {1: {}}})
+	>>> seed = 170141183460469231731687303715884105727
+	>>> shuffle_graph(G, seed).adj  #Set seed to make the results repeatable.
+	AdjacencyView({2: {1: {}, 3: {}}, 1: {2: {}, 0: {}}, 3: {2: {}, 4: {}}, 0: {1: {}}, 4: {3: {}}})

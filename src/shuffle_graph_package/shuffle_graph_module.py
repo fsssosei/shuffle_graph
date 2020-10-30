@@ -21,7 +21,7 @@ from networkx.classes.graph import Graph
 from networkx.classes.digraph import DiGraph
 from networkx.classes.multigraph import MultiGraph
 from networkx.classes.multidigraph import MultiDiGraph
-from completely_shuffle_package import *
+from complete_shuffle_package import *
 
 __all__ = ['shuffle_graph', 'prng_algorithms_tuple', 'default_prng_type']
 
@@ -64,7 +64,7 @@ def shuffle_graph(data_graph: NetworkXGraphObject, seed: Optional[int] = None, p
     from networkx.convert import from_dict_of_dicts
     
     list_of_nodes = list(data_graph.nodes)
-    pr_completely_shuffle(list_of_nodes, seed, prng_type)
+    pr_complete_shuffle(list_of_nodes, seed, prng_type)
     new_order_data_graph = dict()
     for node in list_of_nodes:
         new_order_data_graph.update({node: data_graph[node]})

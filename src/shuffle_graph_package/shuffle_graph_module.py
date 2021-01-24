@@ -23,7 +23,7 @@ from networkx.classes.multigraph import MultiGraph
 from networkx.classes.multidigraph import MultiDiGraph
 from complete_shuffle_package import *
 
-__all__ = ['shuffle_graph', 'prng_algorithms_tuple', 'default_prng_type']
+__all__ = ['shuffle_graph', 'prng_type_tuple', 'default_prng_type']
 
 NetworkXGraphObject = TypeVar('NetworkXGraphObject', Graph, DiGraph, MultiGraph, MultiDiGraph)
 
@@ -53,13 +53,13 @@ def shuffle_graph(data_graph: NetworkXGraphObject, seed: Optional[int] = None, p
         >>> G = Graph({0: {1: {}}, 1: {0: {}, 2: {}}, 2: {1: {}, 3: {}}, 3: {2: {}, 4: {}}, 4: {3: {}}})
         >>> seed = 170141183460469231731687303715884105727
         >>> shuffle_graph(G, seed).adj  #Set seed to make the results repeatable.
-        AdjacencyView({2: {1: {}, 3: {}}, 1: {2: {}, 0: {}}, 3: {2: {}, 4: {}}, 0: {1: {}}, 4: {3: {}}})
+        AdjacencyView({1: {0: {}, 2: {}}, 2: {1: {}, 3: {}}, 3: {2: {}, 4: {}}, 4: {3: {}}, 0: {1: {}}})
     '''
-    assert isinstance(data_graph, NetworkXGraphObject), f'data_graph must be an NetworkXGraphObject, got type {type(data_graph).__name__}'
+    assert isinstance(data_graph, (Graph, DiGraph, MultiGraph, MultiDiGraph)), f'data_graph must be an NetworkXGraphObject, got type {type(data_graph).__name__}'
     assert isinstance(seed, (int, type(None))), f'seed must be an int or None, got type {type(seed).__name__}'
     assert isinstance(prng_type, str), f'prng_type must be an str, got type {type(prng_type).__name__}'
     if isinstance(seed, int) and (seed < 0): raise ValueError('seed must be >= 0')
-    if prng_type not in prng_algorithms_tuple: raise ValueError('The string for prng_type is not in the list of implemented algorithms.')
+    if prng_type not in prng_type_tuple: raise ValueError('The string for prng_type is not in the list of implemented algorithms.')
     
     from networkx.convert import from_dict_of_dicts
     

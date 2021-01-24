@@ -18,4 +18,4 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from shuffle_graph_package.shuffle_graph_module import *
 
-version = '2.0.2'
+version = '2.1.0'

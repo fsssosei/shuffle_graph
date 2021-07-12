@@ -23,7 +23,7 @@ with open("README.md", encoding='utf-8') as fh:
 
 setup(
     name='shuffle_graph',
-    version='2.1.0',
+    version='2.2.0',
     description='Graph shuffling package in python.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -41,5 +41,5 @@ setup(
     package_dir={'': 'src'},
     packages=find_packages('src'),
     include_package_data=True,
-    install_requires=['networkx>=2.5', 'complete_shuffle>=1.0.0']
+    install_requires=['networkx>=2.5', 'complete_shuffle>=1.1.2']
 )
